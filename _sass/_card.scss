@@ -1,0 +1,159 @@
+.card {
+    position: relative;
+    margin: 100px 20px 0;
+    background: white;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 3px 5px 5px rgba(0,0,0,0.24);
+
+    &:before, &:after {
+        position: absolute;
+        top: -78px;
+        right: 0;
+        content: ' ';
+        display: block;
+        width: 115px;
+        height: 95px;
+        background: url('/files/pince.png') no-repeat center center;
+        background-size: 100%;
+    }
+
+    &:before {
+        left: calc(50% - 57px);
+    }
+
+    &:after {
+        display: none;
+    }
+}
+
+@media (min-width: $screen-xs-max) {
+    .card--double {
+        &:before {
+            left: calc(25% - 67px);
+        }
+
+        &:after {
+            left: calc(75% - 47px);
+            display: block;
+        }
+    }
+}
+
+.card__centered {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5em;
+}
+
+.card__title {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 0.25em;
+}
+
+
+
+.card__centered {
+    text-align:center;
+}
+
+.card__line {
+    border-bottom:1px solid;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+
+.card__media {
+    width: 100%;
+}
+
+.card__social {
+    position:relative;
+    list-style: none;
+    margin: 10px 15px;
+    line-height: 35px;
+    margin-left:-22px;
+
+    display: flex;
+
+    li, a { height: 35px; }
+    a > span { display: none; }
+    a > img { height: 100%; }
+}
+
+.card--website {
+    opacity:0.95;
+}
+
+.card--rounded {
+    border-radius: 20px;
+
+    .card__media {
+        overflow: hidden;
+        border-radius: 20px;
+    } 
+}
+
+.card--padded {
+    padding: 20px;
+
+    a {
+        color:black;
+        text-decoration:underline;
+    }
+
+    a:hover {
+        text-decoration:line-through;
+    }
+}
+
+.card--more {
+    background: black;
+    color: white;
+
+    a {
+        color: inherit;
+    }
+}
+
+.card--business {
+    position: relative;
+    height: 280px;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    h1, address > span, .url { display: none; }
+
+    img, h2, h3, address a {
+        line-height: 1;
+        font-size: 16px;
+        text-shadow: 0 0 2px rgba(100, 100, 100, 0.3);
+        position: absolute;
+        padding: 0;
+        margin: 0;
+
+        &, a {
+            text-decoration: none;
+            color: black;
+            font-style: normal;
+        }
+    }
+
+    h2, h3 { text-transform: uppercase; }
+
+    img {
+        left: 20px;
+        top: 90px;
+        width: 60px;
+    }
+
+    h2, h3, address a { left: 100px; }
+    h2 { top: 110px; }
+    h3 { top: 130px; }
+    .email { top: 165px; }
+    .phone { top: 200px; }
+}
